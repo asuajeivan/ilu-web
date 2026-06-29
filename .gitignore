@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+.thumbnail
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Uploads / temp
+uploads/
+
+# Node (future)
+node_modules/

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ILU — Agente IA de WhatsApp para Odoo | Reportes, Stock y Atención 24/7</title>
+<meta name="description" content="ILU conecta tu Odoo con WhatsApp: reportes diarios en PDF, consultas de stock y precios en segundos, y atención automática a clientes 24/7. Para PyMEs que usan Odoo en LATAM." />
+<meta name="keywords" content="Odoo WhatsApp, agente IA WhatsApp, reportes Odoo, chatbot Odoo, integración WhatsApp Odoo, automatización WhatsApp empresa, consultar stock WhatsApp, ILU agente" />
+<meta property="og:title" content="ILU — Tu negocio te reporta solo. En tu WhatsApp." />
+<meta property="og:description" content="Reportes diarios en PDF, consultas de stock y precios, atención a clientes 24/7. Todo desde tu Odoo, directo a tu WhatsApp." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_LA" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ILU — Agente IA de WhatsApp para Odoo" />
+<meta name="twitter:description" content="Reportes, stock, precios y atención al cliente. Tu Odoo habla por WhatsApp con IA." />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ILU",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, WhatsApp",
+  "description": "Agente de WhatsApp con IA que conecta tu Odoo: reportes diarios en PDF, consultas de stock y precios, atención automática a clientes 24/7.",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "description": "Demo gratuita de 20 minutos. Precio personalizado según tu operación."
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============= NAV ============= -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark">ILU</span>
+      <span>ILU</span>
+    </a>
+    <div class="nav-links">
+      <a href="#cases">Para quién</a>
+      <a href="#how">Cómo funciona</a>
+      <a href="#demo">Ejemplos</a>
+      <a href="#features">Funciones</a>
+      <a href="#faq">FAQ</a>
+      <a href="#" class="nav-cta" data-cal-namespace="demo-ilu" data-cal-link="ivan-asuaje-m0allh" data-cal-config='{"layout":"month_view"}' onclick="event.preventDefault()">Agendar demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============= HERO ============= -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="dot"></span> Odoo + WhatsApp + IA — en un solo agente</span>
+
+      <h1 class="headline">
+        Tu negocio te <span class="serif accent">reporta solo</span>. Cada noche. En tu <span class="serif">WhatsApp</span>.
+      </h1>
+
+      <p class="lede">
+        ILU conecta tu Odoo con WhatsApp: tus clientes consultan stock y precios solos, tu gerente controla todo sin abrir el ERP, y tú recibes el reporte del día en PDF sin pedírselo a nadie.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary" data-cal-namespace="demo-ilu" data-cal-link="ivan-asuaje-m0allh" data-cal-config='{"layout":"month_view"}' onclick="event.preventDefault()">
+          Quiero ver mi reporte de ejemplo
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="#demo" class="btn btn-secondary">
+          Ver ILU en acción
+        </a>
+      </div>
+
+      <div class="trust-row">
+        <span class="mono trust-row__setup">setup en 15 min</span>
+        <span class="divider"></span>
+        <span>Odoo 14–18 · Community y Enterprise</span>
+        <span class="divider"></span>
+        <span>Sin tocar tu operación</span>
+      </div>
+    </div>
+
+    <!-- Phone mockup with interactive chat -->
+    <div class="phone-wrap">
+      <div class="phone-floating-tag tl">
+        <span class="pulse"></span>
+        <div>
+          <div class="phone-floating-tag__title">Reporte diario</div>
+          <div class="phone-floating-tag__sub mono">enviado · 8:00am</div>
+        </div>
+      </div>
+
+      <div class="phone-floating-tag br">
+        <div class="phone-floating-tag__emoji">💬</div>
+        <div>
+          <div class="phone-floating-tag__title">Cliente atendido</div>
+          <div class="phone-floating-tag__sub">en 4 segundos</div>
+        </div>
+      </div>
+
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="chat-header">
+            <div class="avatar">ILU</div>
+            <div class="chat-header-info">
+              <div class="chat-header-name">ILU · Tu asistente</div>
+              <div class="chat-header-status">
+                <span class="chat-header-status__dot"></span>
+                en línea
+              </div>
+            </div>
+            <div class="chat-header-menu">⋮</div>
+          </div>
+
+          <div class="chat-body" id="chatBody"></div>
+
+          <div class="quick-replies" id="quickReplies">
+            <button class="quick-reply" data-q="¿Cuántas ventas hicimos hoy?">Ventas de hoy</button>
+            <button class="quick-reply" data-q="¿Qué producto se vendió más esta semana?">Top producto</button>
+            <button class="quick-reply" data-q="¿Tengo stock bajo?">Stock bajo</button>
+            <button class="quick-reply" data-q="¿Cuál fue mi mejor día este mes?">Mejor día</button>
+          </div>
+
+          <form class="chat-input" id="chatForm">
+            <input id="chatInput" type="text" placeholder="Pregúntame sobre tu negocio…" autocomplete="off" />
+            <button type="submit" class="send" id="sendBtn" aria-label="Enviar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============= INTEGRATIONS ============= -->
+<section class="integrations">
+  <div class="container integrations-inner">
+    <span>Conectado con tus herramientas:</span>
+    <div class="int-chip"><span class="int-chip-dot"></span> Odoo 14–18</div>
+    <div class="int-chip"><span class="int-chip-dot int-chip-dot--coral"></span> WhatsApp Business API</div>
+    <div class="int-chip"><span class="int-chip-dot"></span> Cloud API · Meta</div>
+    <div class="int-chip"><span class="int-chip-dot int-chip-dot--coral"></span> Webhooks</div>
+    <div class="int-chip"><span class="int-chip-dot"></span> Telegram <span class="int-chip-soon">· soon</span></div>
+  </div>
+</section>
+
+<!-- ============= PAIN BAR ============= -->
+<section class="pain-bar">
+  <div class="container">
+    <div class="pain-bar__grid">
+      <div>
+        <div class="pain-bar__title">"¿Hay stock?" — 40 veces al día.</div>
+        <div class="pain-bar__sub">Tus vendedores responden lo mismo una y otra vez.</div>
+      </div>
+      <div>
+        <div class="pain-bar__title">Son las 9 PM y no sabes cuánto facturaste.</div>
+        <div class="pain-bar__sub">Tienes que llamar a alguien. Otra vez.</div>
+      </div>
+      <div>
+        <div class="pain-bar__title">Tu gerente abre Odoo solo para ver una factura.</div>
+        <div class="pain-bar__sub">5 clics para un dato que debería ser un mensaje.</div>
+      </div>
+      <div>
+        <div class="pain-bar__title">La info existe. Está en tu ERP.</div>
+        <div class="pain-bar__sub">Pero nadie la puede consultar rápido.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= AUDIENCE / CASES ============= -->
+<section id="cases" class="block">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">Un agente, tres perfiles</span>
+        <h2 class="section-title">Un solo agente. Tres personas que dejan de <span class="serif">esperar</span>.</h2>
+      </div>
+      <div class="right">
+        ILU atiende a tu equipo y a tus clientes en el mismo canal — WhatsApp — sin cambiar de número, sin apps nuevas, sin entrenar a nadie.
+      </div>
+    </div>
+
+    <div class="audience-grid">
+      <!-- CLIENTE -->
+      <div class="audience-card client">
+        <span class="role-tag"><span class="role-tag-dot"></span> Tu cliente</span>
+        <h3>Se atiende solo, sin esperar a un vendedor.</h3>
+        <p>Pregunta por stock, precios, su pedido o su deuda — y ILU le responde en segundos directo desde tu Odoo. Lo reconoce por su número y recuerda conversaciones previas.</p>
+
+        <div class="examples-list">
+          <div class="ex-bubble user">¿Tienen disponible el rin 17 referencia R-2240?</div>
+          <div class="ex-bubble">¡Hola, José! Sí, hay 14 unidades del R-2240 en almacén principal. Precio: $85 c/u. ¿Te preparo la cotización?</div>
+        </div>
+      </div>
+
+      <!-- GERENTE -->
+      <div class="audience-card manager">
+        <span class="role-tag"><span class="role-tag-dot"></span> Tu gerente</span>
+        <h3>Controla la operación sin abrir Odoo.</h3>
+        <p>Facturas, pedidos en proceso, cartera vencida, entregas del día y leads del CRM — todo por WhatsApp. Cada consulta de un prospecto queda registrada como lead en Odoo.</p>
+
+        <div class="examples-list">
+          <div class="ex-bubble user">Dame el estado de la factura de Distribuidora Lara</div>
+          <div class="ex-bubble">Factura F-04412 · $3.240 · Vencida hace 6 días. Última promesa de pago: lunes. ¿Quieres la cartera vencida completa?</div>
+        </div>
+      </div>
+
+      <!-- DUEÑO -->
+      <div class="audience-card owner">
+        <span class="role-tag"><span class="role-tag-dot"></span> Tú, el dueño</span>
+        <h3>Tu negocio te rinde cuentas, no al revés.</h3>
+        <p>Cada noche recibes el PDF del día: cuánto facturaste, qué salió, qué está vencido. Y cuando quieras saber algo, solo preguntas.</p>
+
+        <div class="examples-list">
+          <div class="ex-bubble">📄 Reporte del día — Facturación: $12.480 (+18%) · 23 pedidos · Cobranza pendiente: $8.900. PDF adjunto.</div>
+          <div class="ex-bubble user">¿Quiénes son los retrasados?</div>
+          <div class="ex-bubble">Pedido #1872 (Ferretería Central, $1.150) y #1875 (Comercial Andes, $760). Reprogramados para mañana.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= HOW IT WORKS ============= -->
+<section id="how" class="block block--alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">Cómo funciona</span>
+        <h2 class="section-title">De Odoo a tu WhatsApp en <span class="serif">3 pasos</span>.</h2>
+      </div>
+      <div class="right">
+        Nuestro equipo hace la integración completa. Tú no haces nada técnico. Tu data nunca sale de tus servidores.
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Conectamos tu Odoo</h4>
+        <p>Nuestro equipo integra ILU con tu instancia (en la nube u on-premise), sin tocar tus datos ni interrumpir tu operación.</p>
+        <div class="step-tech">odoo · v14–v18 · community o enterprise</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Configuramos tus perfiles y reportes</h4>
+        <p>Definimos juntos qué pueden consultar tus clientes, qué ve tu gerente, y qué reportes recibes tú, a qué hora y con qué detalle.</p>
+        <div class="step-tech">perfiles · reportes · horarios · permisos</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Empiezas a recibir todo en WhatsApp</h4>
+        <p>Desde el primer día: tus clientes se atienden solos, tu equipo deja de ser el intermediario, y tu primer reporte nocturno llega esa misma noche.</p>
+        <div class="step-tech">activo · desde el día 1 · sin capacitación</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= EXAMPLES PANEL ============= -->
+<section id="demo" class="block">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">Ejemplos reales</span>
+        <h2 class="section-title">Lo que recibe tu equipo, lo que reciben tus <span class="serif">clientes</span>.</h2>
+      </div>
+      <div class="right">
+        Cada conversación se guarda en Odoo como una nota de cliente. Si ILU no sabe, te avisa para que respondas tú.
+      </div>
+    </div>
+
+    <div class="examples-panel">
+      <div class="examples-tabs">
+        <div class="label">Reportes al dueño</div>
+        <button class="ex-tab active" data-tab="report-daily"><span class="num">01</span> Reporte diario</button>
+        <button class="ex-tab" data-tab="report-stock"><span class="num">02</span> Alerta de stock</button>
+        <button class="ex-tab" data-tab="report-ask"><span class="num">03</span> Pregunta abierta</button>
+
+        <div class="label label--spaced">Atención al cliente</div>
+        <button class="ex-tab" data-tab="cust-faq"><span class="num">04</span> FAQ catálogo</button>
+        <button class="ex-tab" data-tab="cust-order"><span class="num">05</span> Pedido</button>
+        <button class="ex-tab" data-tab="cust-after"><span class="num">06</span> Post-venta</button>
+      </div>
+
+      <div class="ex-content">
+        <!-- Pane 1: daily report -->
+        <div class="ex-pane active" data-pane="report-daily">
+          <div class="ex-title">Reporte diario, cada mañana a las 8am</div>
+          <div class="ex-sub">ILU compila los KPIs de cierre y te los manda en formato breve. Tú decides la hora y las métricas.</div>
+          <div class="ex-msg report">
+            <div class="label">Cierre del miércoles 8 may</div>
+            <table>
+              <tr><td>Ventas totales</td><td>$54,820 MXN</td></tr>
+              <tr><td>Tickets</td><td>284 · ↑ 12%</td></tr>
+              <tr><td>Ticket promedio</td><td>$193</td></tr>
+              <tr><td>Mejor sucursal</td><td>Polanco</td></tr>
+              <tr><td>Producto top</td><td>Café 250g · 42 uds</td></tr>
+              <tr><td>Stock crítico</td><td>3 SKUs</td></tr>
+            </table>
+          </div>
+          <div class="ex-msg bot">¿Quieres que te detalle alguno o lo dejamos así?</div>
+        </div>
+
+        <!-- Pane 2: stock alert -->
+        <div class="ex-pane" data-pane="report-stock">
+          <div class="ex-title">Alertas en tiempo real cuando algo importa</div>
+          <div class="ex-sub">ILU vigila reglas que tú defines: stock bajo, ventas anormales, mermas, vencimientos.</div>
+          <div class="ex-msg bot">⚠️ <b>Alerta de stock</b> — el SKU «Vibrance Shampoo 500ml» quedó en 4 unidades en sucursal Centro. Por consumo promedio se acaba mañana.</div>
+          <div class="ex-msg user">¿Cuándo fue el último pedido al proveedor?</div>
+          <div class="ex-msg bot">El 22 abril, 24 unidades. Llegada típica: 3 días hábiles. ¿Quieres que prepare la orden de compra?</div>
+          <div class="ex-msg user">Sí, manda 36 unidades</div>
+          <div class="ex-msg bot">Listo. Borrador de OC #2147 creado en Odoo, esperando tu aprobación.</div>
+        </div>
+
+        <!-- Pane 3: open question -->
+        <div class="ex-pane" data-pane="report-ask">
+          <div class="ex-title">Preguntas abiertas — sin SQL, sin reportes</div>
+          <div class="ex-sub">Habla en español como hablarías con tu contador. ILU traduce a queries seguras sobre tu Odoo.</div>
+          <div class="ex-msg user">¿Cómo van mis márgenes este trimestre comparado con el anterior?</div>
+          <div class="ex-msg bot">Margen bruto Q2: <b>38.4%</b> vs Q1: 35.1%. Subió 3.3 puntos. La mejora viene principalmente de la línea Café (¿el cambio de proveedor en marzo?).</div>
+          <div class="ex-msg user">Mándame eso por correo a contadora@</div>
+          <div class="ex-msg bot">Enviado a Lucía con el desglose por categoría.</div>
+        </div>
+
+        <!-- Pane 4: customer FAQ -->
+        <div class="ex-pane" data-pane="cust-faq">
+          <div class="ex-title">Preguntas frecuentes con datos reales</div>
+          <div class="ex-sub">Stock, precio, horarios, dirección, formas de pago — ILU lee tu Odoo en vivo, nunca inventa.</div>
+          <div class="ex-msg user">Buenas, ¿tienen las botas 712 modelo Hudson talla 27?</div>
+          <div class="ex-msg bot">Hola 👋 Sí, tenemos 2 pares disponibles en sucursal Polanco a $1,890. ¿Te las aparto o prefieres que te las mande?</div>
+          <div class="ex-msg user">Apártamelas, paso hoy</div>
+          <div class="ex-msg bot">Listo. Apartado #A-9921 a tu nombre, vigente hasta hoy 8pm. Te espero.</div>
+        </div>
+
+        <!-- Pane 5: order -->
+        <div class="ex-pane" data-pane="cust-order">
+          <div class="ex-title">Pedidos directos por chat</div>
+          <div class="ex-sub">El cliente pide, ILU confirma stock y precio, crea el pedido en Odoo y manda link de pago.</div>
+          <div class="ex-msg user">Quiero 2 cajas de café 250g y 1 chocolate amargo</div>
+          <div class="ex-msg bot">Total: $740. ¿Recoges en sucursal o quieres envío? Si es envío, ¿a qué CP?</div>
+          <div class="ex-msg user">Envío a 06700</div>
+          <div class="ex-msg bot">Envío estándar +$80. Total $820. Pago aquí: <span class="ex-msg__link">pay.ilu.ai/o-2204</span></div>
+        </div>
+
+        <!-- Pane 6: post sale -->
+        <div class="ex-pane" data-pane="cust-after">
+          <div class="ex-title">Post-venta sin tickets perdidos</div>
+          <div class="ex-sub">ILU identifica al cliente, busca su pedido en Odoo, y resuelve o escala con tu equipo.</div>
+          <div class="ex-msg user">Hola, mi pedido de ayer llegó incompleto. Falta un producto.</div>
+          <div class="ex-msg bot">Lo veo, pedido #O-2188 del 7 may. Te falta el chocolate amargo. ¿Prefieres reenvío gratis o reembolso de $145?</div>
+          <div class="ex-msg user">Reenvío</div>
+          <div class="ex-msg bot">Confirmado. Sale hoy con guía nueva. Marqué la incidencia en tu cuenta.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= OWNER REPORT SECTION ============= -->
+<section class="block owner-report">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="section-tag section-tag--muted">Para el dueño</span>
+        <h2 class="section-title section-title--light">El reporte que nadie te tiene que <span class="serif section-title--accent">mandar</span>.</h2>
+      </div>
+      <div class="right right--muted">
+        Todos los dueños conocen esta rutina: termina el día y empiezan las llamadas. "¿Cuánto facturamos?" "¿Salieron las entregas?" "¿Quién no ha pagado?"
+      </div>
+    </div>
+
+    <div class="owner-report__grid">
+      <div>
+        <p class="owner-report__body">
+          Con ILU, esa rutina desaparece. Cada noche, a la hora que tú elijas, llega a tu WhatsApp un PDF con tu día completo:
+        </p>
+        <div class="owner-report__list">
+          <div class="owner-report__item">
+            <span class="owner-report__check">✓</span>
+            <div><b>Facturación:</b> <span class="owner-report__detail">total del día, desglose por cliente, productos más vendidos, comparativa con ayer</span></div>
+          </div>
+          <div class="owner-report__item">
+            <span class="owner-report__check">✓</span>
+            <div><b>Entregas:</b> <span class="owner-report__detail">qué salió, qué está pendiente, qué se retrasó y por qué</span></div>
+          </div>
+          <div class="owner-report__item">
+            <span class="owner-report__check">✓</span>
+            <div><b>Cobranza:</b> <span class="owner-report__detail">facturas vencidas, montos por cobrar, los clientes que más te deben</span></div>
+          </div>
+          <div class="owner-report__item">
+            <span class="owner-report__check">✓</span>
+            <div><b>Resumen semanal y mensual:</b> <span class="owner-report__detail">el ejecutivo que te lee en 30 segundos en la fila del banco</span></div>
+          </div>
+        </div>
+        <p class="owner-report__note">
+          Y si no quieres esperar a la noche: pregunta. "¿Cuánto facturamos hoy?" y el PDF llega en segundos. Tú decides qué reportes recibir, cada cuánto y con qué nivel de detalle.
+        </p>
+        <div class="owner-report__cta">
+          <a href="#" class="btn btn-accent" data-cal-namespace="demo-ilu" data-cal-link="ivan-asuaje-m0allh" data-cal-config='{"layout":"month_view"}' onclick="event.preventDefault()">
+            Quiero recibir este reporte de mi negocio
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="owner-report__mockup">
+        <div class="owner-report__mockup-header">Reporte nocturno · 8:00 PM</div>
+        <div class="owner-report__row">
+          <span class="owner-report__row-label">Facturación del día</span>
+          <b class="owner-report__row-value">$12.480</b>
+        </div>
+        <div class="owner-report__row">
+          <span class="owner-report__row-label">vs ayer</span>
+          <span class="owner-report__row-value--up">+18%</span>
+        </div>
+        <div class="owner-report__row">
+          <span class="owner-report__row-label">Pedidos despachados</span>
+          <b class="owner-report__row-value">23</b>
+        </div>
+        <div class="owner-report__row">
+          <span class="owner-report__row-label">Retrasados</span>
+          <b class="owner-report__row-value--down">2</b>
+        </div>
+        <div class="owner-report__row">
+          <span class="owner-report__row-label">Cobranza pendiente</span>
+          <b class="owner-report__row-value">$8.900</b>
+        </div>
+        <div class="owner-report__pdf">
+          📄 PDF adjunto con el detalle completo
+        </div>
+        <p class="owner-report__quote">
+          "Es como tener un gerente de finanzas que nunca duerme y te escribe primero."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FEATURES GRID ============= -->
+<section id="features" class="block block--alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">Funciones</span>
+        <h2 class="section-title">Todo lo que necesita un agente que <span class="serif">trabaja</span> en serio.</h2>
+      </div>
+      <div class="right">
+        No es un chatbot con respuestas pregrabadas. Es un agente con acceso real a tu data, con permisos, memoria y trazabilidad.
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feat">
+        <div class="feat-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+        </div>
+        <h4>Lenguaje natural</h4>
+        <p>Pregunta en español, inglés o lo que hables. ILU entiende contexto, fechas relativas y comparaciones.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+        </div>
+        <h4>Acceso real a tu Odoo</h4>
+        <p>Lectura sobre ventas, stock, clientes, compras, contabilidad. Escritura solo donde tú lo permitas.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <h4>Reportes programados</h4>
+        <p>Diarios, semanales o cuando pase X. Tú defines qué métricas y a qué hora — ILU las arma y las manda.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6z"/></svg>
+        </div>
+        <h4>Permisos por rol</h4>
+        <p>El dueño ve márgenes, el cajero solo stock. Heredamos la matriz de permisos que ya tienes en Odoo.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h4>Multi-sucursal y multi-idioma</h4>
+        <p>Una sola instancia atiende todas tus tiendas. Cada una con su número, horarios y catálogo.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Tu data se queda contigo</h4>
+        <p>ILU corre contra tu instancia de Odoo. No copiamos, no entrenamos modelos con tu información.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= STATS ============= -->
+<section class="block block--tight">
+  <div class="container">
+    <div class="stats">
+      <div>
+        <div class="stat-num">&lt;4 <span class="serif">seg</span></div>
+        <div class="stat-label">tiempo promedio de respuesta a clientes</div>
+      </div>
+      <div>
+        <div class="stat-num">24<span class="serif">/7</span></div>
+        <div class="stat-label">atención sin intervención humana, sin descansos</div>
+      </div>
+      <div>
+        <div class="stat-num">0</div>
+        <div class="stat-label">consultas de "¿hay stock?" que tu equipo responde manualmente</div>
+      </div>
+      <div>
+        <div class="stat-num">15 <span class="serif">min</span></div>
+        <div class="stat-label">de tu día conectando ILU a tu Odoo — una sola vez</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FAQ ============= -->
+<section id="faq" class="block block--alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">Preguntas frecuentes</span>
+        <h2 class="section-title">Antes de decidir, <span class="serif">resuelve esto</span>.</h2>
+      </div>
+      <div class="right">
+        ¿No está aquí lo que buscas? Escríbenos por WhatsApp y te respondemos directo — sin bots, sin formularios.
+      </div>
+    </div>
+
+    <div class="faq">
+      <details class="faq-item" open>
+        <summary>¿Mis datos están seguros?</summary>
+        <div class="answer">ILU se conecta a tu Odoo con credenciales de acceso controlado y permisos por perfil: cada persona solo ve lo que tú autorizas. Tu cliente jamás ve datos de otro cliente, y tus reportes solo llegan a los números que tú definas. Nada se comparte con terceros.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Es difícil de instalar?</summary>
+        <div class="answer">No instalas nada. Nosotros hacemos la integración completa y la configuración inicial contigo. Tu equipo no necesita capacitación: si saben usar WhatsApp, ya saben usar ILU.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuánto cuesta?</summary>
+        <div class="answer">Menos de lo que te cuesta una hora diaria de tu equipo respondiendo "¿hay stock?". El precio depende del tamaño de tu operación — en la demo te damos el número exacto, sin letra pequeña. La mayoría de nuestros clientes lo recuperan en el primer mes.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Funciona con mi versión de Odoo?</summary>
+        <div class="answer">ILU funciona con Odoo 14 a 18, tanto Community como Enterprise, en la nube o en tu servidor. En la demo verificamos tu instancia en 5 minutos.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puede el agente equivocarse y dar info errónea?</summary>
+        <div class="answer">ILU solo responde sobre lo que ve en Odoo y en tus FAQs. Cuando no sabe, dice "déjame consultarlo" y escala a tu equipo. Puedes revisar todas las conversaciones y nunca inventa datos.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Necesito un número de WhatsApp nuevo?</summary>
+        <div class="answer">No, usas el que ya tienes. Te ayudamos con el proceso de WhatsApp Business API. Si ya estás verificado, la conexión toma minutos.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué pasa si llega un mensaje que el agente no debe responder?</summary>
+        <div class="answer">Tú defines temas vetados (ej. "devoluciones las manejo yo"). Cuando llega uno, ILU te avisa y escala al humano indicado. También puedes pausar el agente con un solo mensaje.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FINAL CTA ============= -->
+<section id="cta">
+  <div class="container">
+    <div class="final-cta">
+      <div class="final-cta-inner">
+        <span class="eyebrow"><span class="dot"></span> Demo de 20 min · Sin compromiso</span>
+        <h2>Cada día sin ILU es otro día <span class="serif">llamando</span> para preguntar cómo va tu negocio.</h2>
+        <p>Agenda una demo de 20 minutos por WhatsApp. Te mostramos ILU conectado a un Odoo real — y te enviamos un PDF de ejemplo del reporte que recibirías cada noche.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary" data-cal-namespace="demo-ilu" data-cal-link="ivan-asuaje-m0allh" data-cal-config='{"layout":"month_view"}' onclick="event.preventDefault()">
+            Agendar mi demo de 20 min
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="#" class="btn btn-secondary">Descargar reporte de ejemplo (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FOOTER ============= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-about">
+        <div class="logo">
+          <span class="logo-mark">ILU</span>
+          <span>ILU</span>
+        </div>
+        <p>Tu negocio te reporta solo. Tu Odoo habla por WhatsApp. Hecho en LATAM, para PyMEs que usan Odoo y quieren dejar de perseguir su información.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Producto</h5>
+        <ul>
+          <li><a href="#how">Cómo funciona</a></li>
+          <li><a href="#features">Funciones</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Recursos</h5>
+        <ul>
+          <li><a href="#">Documentación</a></li>
+          <li><a href="#">Casos de estudio</a></li>
+          <li><a href="#">Para partners Odoo</a></li>
+          <li><a href="#">Estado del servicio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Términos</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ILU. No afiliado oficialmente con Odoo S.A. ni con Meta.</span>
+      <span class="mono">hecho en LATAM</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Cal.com Popup Embed -->
+<script>
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+  Cal("init", "demo-ilu", { origin: "https://cal.com" });
+  Cal.ns["demo-ilu"]("ui", {
+    theme: "light",
+    styles: { branding: { brandColor: "#D97757" } },
+    hideEventTypeDetails: false,
+    layout: "month_view"
+  });
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

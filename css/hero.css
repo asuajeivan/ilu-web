@@ -1,0 +1,141 @@
+/* =============================================
+   ILU Landing — Hero
+   ============================================= */
+
+.hero {
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 60px;
+  align-items: center;
+}
+
+h1.headline {
+  font-size: clamp(38px, 5.5vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+  color: var(--ink);
+  max-width: 14ch;
+}
+
+h1.headline .accent {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.lede {
+  margin-top: 24px;
+  font-size: 19px;
+  color: var(--ink-2);
+  max-width: 48ch;
+  line-height: 1.55;
+}
+
+.hero-actions {
+  margin-top: 36px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.trust-row {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.trust-row__setup {
+  font-size: 12px;
+}
+
+/* ----- Tablet ----- */
+
+@media (max-width: 1100px) {
+  .hero-grid {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 48px 0 40px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .phone-wrap {
+    order: -1;
+  }
+
+  h1.headline {
+    max-width: 100%;
+  }
+
+  .lede {
+    font-size: 17px;
+  }
+}
+
+/* ----- Mobile ----- */
+
+@media (max-width: 760px) {
+  .hero {
+    padding: 32px 0 36px;
+  }
+
+  .hero-grid {
+    gap: 36px;
+  }
+
+  .lede {
+    font-size: 16px;
+    margin-top: 18px;
+  }
+
+  .hero-actions {
+    margin-top: 28px;
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .trust-row {
+    margin-top: 28px;
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  .trust-row .divider {
+    display: none;
+  }
+
+  .trust-row span {
+    flex-basis: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  h1.headline {
+    font-size: clamp(32px, 9vw, 44px);
+  }
+
+  .eyebrow {
+    margin-bottom: 18px;
+  }
+}
