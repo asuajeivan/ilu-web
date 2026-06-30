@@ -1,117 +1,141 @@
 /* =============================================
-   ILU Landing — Final CTA
+   ILU Landing — Final CTA (Landbot-inspired dark)
    ============================================= */
 
-.final-cta {
-  margin: 100px 0;
-  padding: 80px 60px;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 32px;
+.final-cta-section {
+  background: var(--ink);
+  padding: 100px 0 80px;
+}
+
+.final-inner {
   text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.final-cta::before,
-.final-cta::after {
-  content: '';
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.4;
-}
-
-.final-cta::before {
-  top: -120px;
-  left: -80px;
-  background: var(--accent);
-}
-
-.final-cta::after {
-  bottom: -120px;
-  right: -80px;
-  background: var(--coral);
-}
-
-.final-cta-inner {
-  position: relative;
-  z-index: 1;
-}
-
-.final-cta h2 {
-  font-size: clamp(28px, 5vw, 60px);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  font-weight: 500;
-  max-width: 18ch;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-.final-cta p {
-  margin-top: 18px;
-  color: var(--ink-2);
-  font-size: 18px;
-  max-width: 50ch;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.55;
+.final-h2 {
+  font-size: clamp(30px, 5vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  color: var(--bg);
+  margin-bottom: 48px;
 }
 
-.final-cta .hero-actions {
+.final-h2 .serif {
+  font-weight: 400;
+}
+
+.final-accent {
+  color: var(--accent);
+}
+
+.final-cta-row {
+  display: flex;
   justify-content: center;
-  margin-top: 32px;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.btn-large {
+  padding: 18px 32px;
+  font-size: 16px;
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.final-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 28px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.final-benefit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.final-benefit svg {
+  color: var(--accent);
+  flex-shrink: 0;
 }
 
 /* ----- Responsive ----- */
 
 @media (max-width: 900px) {
-  .final-cta {
-    margin: 72px 0;
-    padding: 60px 40px;
-    border-radius: 28px;
+  .final-cta-section {
+    padding: 72px 0 60px;
+  }
+
+  .final-h2 {
+    margin-bottom: 36px;
+  }
+
+  .final-cta-row {
+    margin-bottom: 36px;
   }
 }
 
 @media (max-width: 760px) {
-  .final-cta {
-    margin: 56px 0;
-    padding: 48px 24px;
-    border-radius: 24px;
+  .final-cta-section {
+    padding: 56px 0 48px;
   }
 
-  .final-cta::before,
-  .final-cta::after {
-    width: 200px;
-    height: 200px;
-    filter: blur(60px);
+  .final-h2 {
+    margin-bottom: 28px;
   }
 
-  .final-cta p {
-    font-size: 15px;
-    margin-top: 14px;
-  }
-
-  .final-cta .hero-actions {
+  .final-cta-row {
     flex-direction: column;
-    margin-top: 24px;
+    align-items: center;
+    margin-bottom: 32px;
   }
 
-  .final-cta .hero-actions .btn {
+  .final-cta-row .btn {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .btn-large {
+    padding: 16px 28px;
+    font-size: 15px;
+  }
+
+  .final-benefits {
+    gap: 10px 20px;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .final-benefit {
+    font-size: 12px;
     width: 100%;
   }
 }
 
 @media (max-width: 480px) {
-  .final-cta {
-    margin: 40px 0;
-    padding: 36px 20px;
-    border-radius: 20px;
+  .final-cta-section {
+    padding: 44px 0 40px;
   }
 
-  .final-cta p {
+  .btn-large {
+    padding: 14px 24px;
     font-size: 14px;
   }
 }

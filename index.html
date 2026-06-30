@@ -113,7 +113,7 @@
       <span class="logo-mark">ILU</span>
       <span>ILU</span>
     </a>
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
       <a href="#cases">Para quién</a>
       <a href="#how">Cómo funciona</a>
       <a href="#demo">Ejemplos</a>
@@ -121,6 +121,11 @@
       <a href="#faq">FAQ</a>
       <a href="#" class="nav-cta" data-cal-namespace="demo-ilu" data-cal-link="ivan-asuaje-m0allh" data-cal-config='{"layout":"month_view"}' onclick="event.preventDefault()">Agendar demo</a>
     </div>
+    <button class="nav-burger" id="navBurger" aria-label="Menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </nav>
 
@@ -157,57 +162,29 @@
       </div>
     </div>
 
-    <!-- Phone mockup with interactive chat -->
-    <div class="phone-wrap">
-      <div class="phone-floating-tag tl">
-        <span class="pulse"></span>
-        <div>
-          <div class="phone-floating-tag__title">Reporte diario</div>
-          <div class="phone-floating-tag__sub mono">enviado · 8:00am</div>
-        </div>
-      </div>
-
-      <div class="phone-floating-tag br">
-        <div class="phone-floating-tag__emoji">💬</div>
-        <div>
-          <div class="phone-floating-tag__title">Cliente atendido</div>
-          <div class="phone-floating-tag__sub">en 4 segundos</div>
-        </div>
-      </div>
-
-      <div class="phone">
-        <div class="phone-notch"></div>
-        <div class="phone-screen">
-          <div class="chat-header">
-            <div class="avatar">ILU</div>
-            <div class="chat-header-info">
-              <div class="chat-header-name">ILU · Tu asistente</div>
-              <div class="chat-header-status">
-                <span class="chat-header-status__dot"></span>
-                en línea
-              </div>
+    <!-- WhatsApp chat mockup (Landbot style) -->
+    <div class="hero-chat-v2">
+      <div class="hero-chat-backdrop-v2"></div>
+      <div class="wa-chat-v2" id="wa-chat">
+        <div class="wa-msg wa-msg-out">¿Cuánta materia prima me queda? <span class="wa-msg-time">8:02</span></div>
+        <div class="wa-msg wa-msg-in">Tienes 3 insumos en nivel crítico: Harina de trigo (12 kg), Aceite vegetal (8 L) y Empaque kraft (140 uds). Al ritmo actual te alcanzan para 2 días. <span class="wa-msg-time">8:02</span></div>
+        <div class="wa-msg wa-msg-out">¿Y las cuentas por cobrar? <span class="wa-msg-time">8:03</span></div>
+        <div class="wa-msg wa-msg-in">Tienes $18.400 pendientes. Distribuidora Lara te debe $6.200 (vencida hace 8 días) y Comercial Andes $4.750 (vence mañana). Son las dos más grandes. <span class="wa-msg-time">8:03</span></div>
+        <div class="wa-msg wa-msg-out">¿Cuánto debo yo a proveedores? <span class="wa-msg-time">8:04</span></div>
+        <div class="wa-msg wa-msg-in">$9.300 en cuentas por pagar. La más urgente es Proveedor Central: $5.100, vence el viernes. <span class="wa-msg-time">8:04</span></div>
+        <div class="wa-msg wa-msg-out">Dame todo eso en un PDF <span class="wa-msg-time">8:05</span></div>
+        <div class="wa-msg wa-msg-in">Listo, aquí tienes: <span class="wa-msg-time">8:05</span></div>
+        <div class="wa-msg wa-msg-in wa-msg-file">
+          <div class="wa-file-bubble">
+            <div class="wa-file-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill="#E53935" opacity="0.15" stroke="#E53935" stroke-width="1.5"/><polyline points="14 2 14 8 20 8" stroke="#E53935" stroke-width="1.5" stroke-linecap="round"/><text x="12" y="17" text-anchor="middle" fill="#E53935" font-size="5.5" font-weight="700" font-family="sans-serif">PDF</text></svg>
             </div>
-            <div class="chat-header-menu">⋮</div>
+            <div class="wa-file-info">
+              <div class="wa-file-name">Reporte_8_Mayo_2025.pdf</div>
+              <div class="wa-file-meta">3 páginas · 142 KB</div>
+            </div>
           </div>
-
-          <div class="chat-body" id="chatBody"></div>
-
-          <div class="quick-replies" id="quickReplies">
-            <button class="quick-reply" data-q="¿Cuántas ventas hicimos hoy?">Ventas de hoy</button>
-            <button class="quick-reply" data-q="¿Qué producto se vendió más esta semana?">Top producto</button>
-            <button class="quick-reply" data-q="¿Tengo stock bajo?">Stock bajo</button>
-            <button class="quick-reply" data-q="¿Cuál fue mi mejor día este mes?">Mejor día</button>
-          </div>
-
-          <form class="chat-input" id="chatForm">
-            <input id="chatInput" type="text" placeholder="Pregúntame sobre tu negocio…" autocomplete="off" />
-            <button type="submit" class="send" id="sendBtn" aria-label="Enviar">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-            </button>
-          </form>
+          <span class="wa-msg-time">8:05</span>
         </div>
       </div>
     </div>
@@ -222,7 +199,6 @@
     <div class="int-chip"><span class="int-chip-dot int-chip-dot--coral"></span> WhatsApp Business API</div>
     <div class="int-chip"><span class="int-chip-dot"></span> Cloud API · Meta</div>
     <div class="int-chip"><span class="int-chip-dot int-chip-dot--coral"></span> Webhooks</div>
-    <div class="int-chip"><span class="int-chip-dot"></span> Telegram <span class="int-chip-soon">· soon</span></div>
   </div>
 </section>
 
@@ -579,25 +555,106 @@
   </div>
 </section>
 
-<!-- ============= STATS ============= -->
-<section class="block block--tight">
+<!-- ============= BEFORE / AFTER ============= -->
+<section class="block contrast-section">
   <div class="container">
-    <div class="stats">
+    <div class="section-head">
       <div>
-        <div class="stat-num">&lt;4 <span class="serif">seg</span></div>
-        <div class="stat-label">tiempo promedio de respuesta a clientes</div>
+        <span class="section-tag">El costo de no tenerlo</span>
+        <h2 class="section-title">Lo que pierdes <span class="serif">cada semana</span> sin ILU.</h2>
       </div>
-      <div>
-        <div class="stat-num">24<span class="serif">/7</span></div>
-        <div class="stat-label">atención sin intervención humana, sin descansos</div>
+      <div class="right">
+        No es un gasto. Es lo que dejas de perder. Haz la cuenta con tus propios números.
       </div>
-      <div>
-        <div class="stat-num">0</div>
-        <div class="stat-label">consultas de "¿hay stock?" que tu equipo responde manualmente</div>
+    </div>
+
+    <div class="contrast-grid">
+      <div class="contrast-card contrast-card--before">
+        <div class="contrast-label">Sin ILU — tu semana hoy</div>
+        <div class="contrast-items">
+          <div class="contrast-item">
+            <span class="contrast-icon contrast-icon--bad">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </span>
+            <div>
+              <div class="contrast-item__title">~12 horas/semana</div>
+              <div class="contrast-item__desc">de tu equipo respondiendo "¿hay stock?", "¿cuánto cuesta?", "¿llegó mi pedido?"</div>
+            </div>
+          </div>
+          <div class="contrast-item">
+            <span class="contrast-icon contrast-icon--bad">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </span>
+            <div>
+              <div class="contrast-item__title">$0 visibilidad nocturna</div>
+              <div class="contrast-item__desc">Cierras el día sin saber cuánto facturaste. Lo averiguas mañana — o nunca.</div>
+            </div>
+          </div>
+          <div class="contrast-item">
+            <span class="contrast-icon contrast-icon--bad">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </span>
+            <div>
+              <div class="contrast-item__title">Clientes que se van</div>
+              <div class="contrast-item__desc">Preguntaron precio o stock fuera de horario. Nadie respondió. Compraron en otro lado.</div>
+            </div>
+          </div>
+          <div class="contrast-item">
+            <span class="contrast-icon contrast-icon--bad">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </span>
+            <div>
+              <div class="contrast-item__title">Cobranza olvidada</div>
+              <div class="contrast-item__desc">Facturas vencidas que nadie persigue porque "no sabía que se venció".</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <div class="stat-num">15 <span class="serif">min</span></div>
-        <div class="stat-label">de tu día conectando ILU a tu Odoo — una sola vez</div>
+
+      <div class="contrast-card contrast-card--after">
+        <div class="contrast-label">Con ILU — desde la primera semana</div>
+        <div class="contrast-items">
+          <div class="contrast-item">
+            <span class="contrast-icon contrast-icon--good">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <div>
+              <div class="contrast-item__title">0 preguntas repetitivas</div>
+              <div class="contrast-item__desc">Tu cliente pregunta stock, precio o estado de pedido — ILU responde en 4 segundos, 24/7.</div>
+            </div>
+          </div>
+          <div class="contrast-item">
+            <span class="contrast-icon contrast-icon--good">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <div>
+              <div class="contrast-item__title">PDF cada noche en tu WhatsApp</div>
+              <div class="contrast-item__desc">Facturación, entregas, cobranza pendiente. Sin pedirlo. Sin abrir Odoo.</div>
+            </div>
+          </div>
+          <div class="contrast-item">
+            <span class="contrast-icon contrast-icon--good">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <div>
+              <div class="contrast-item__title">Ventas que no se pierden</div>
+              <div class="contrast-item__desc">Sábado 11pm: tu cliente pregunta, ILU cotiza, tú despiertas con el pedido hecho.</div>
+            </div>
+          </div>
+          <div class="contrast-item">
+            <span class="contrast-icon contrast-icon--good">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <div>
+              <div class="contrast-item__title">Cobranza bajo control</div>
+              <div class="contrast-item__desc">Preguntas "¿quién me debe?" y tienes la lista con montos y días de atraso al instante.</div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary contrast-cta" data-cal-namespace="demo-ilu" data-cal-link="ivan-asuaje-m0allh" data-cal-config='{"layout":"month_view"}' onclick="event.preventDefault()">
+          Quiero esto para mi negocio
+          <span class="btn-arrow">→</span>
+        </a>
       </div>
     </div>
   </div>
@@ -650,20 +707,45 @@
 </section>
 
 <!-- ============= FINAL CTA ============= -->
-<section id="cta">
+<section id="cta" class="final-cta-section">
   <div class="container">
-    <div class="final-cta">
-      <div class="final-cta-inner">
-        <span class="eyebrow"><span class="dot"></span> Demo de 20 min · Sin compromiso</span>
-        <h2>Cada día sin ILU es otro día <span class="serif">llamando</span> para preguntar cómo va tu negocio.</h2>
-        <p>Agenda una demo de 20 minutos por WhatsApp. Te mostramos ILU conectado a un Odoo real — y te enviamos un PDF de ejemplo del reporte que recibirías cada noche.</p>
-        <div class="hero-actions">
-          <a href="#" class="btn btn-primary" data-cal-namespace="demo-ilu" data-cal-link="ivan-asuaje-m0allh" data-cal-config='{"layout":"month_view"}' onclick="event.preventDefault()">
-            Agendar mi demo de 20 min
-            <span class="btn-arrow">→</span>
-          </a>
-          <a href="#" class="btn btn-secondary">Descargar reporte de ejemplo (PDF)</a>
-        </div>
+    <div class="final-inner">
+      <h2 class="final-h2">Cada día sin ILU es otro día <span class="serif final-accent">llamando</span> para preguntar cómo va tu negocio.</h2>
+      <div class="final-cta-row">
+        <a href="#" class="btn btn-accent btn-large" data-cal-namespace="demo-ilu" data-cal-link="ivan-asuaje-m0allh" data-cal-config='{"layout":"month_view"}' onclick="event.preventDefault()">
+          Agendar mi demo de 20 min
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="#" class="btn btn-outline-light btn-large">
+          Descargar reporte de ejemplo
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+      <div class="final-benefits">
+        <span class="final-benefit">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Setup en 15 minutos — sin tocar tu operación
+        </span>
+        <span class="final-benefit">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Demo de 20 min gratis, sin compromiso
+        </span>
+        <span class="final-benefit">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Odoo 14–18 · Community y Enterprise
+        </span>
+        <span class="final-benefit">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Reportes + atención al cliente en un solo agente
+        </span>
+        <span class="final-benefit">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Tu data se queda en tu servidor
+        </span>
+        <span class="final-benefit">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          WhatsApp Business API oficial
+        </span>
       </div>
     </div>
   </div>
@@ -672,47 +754,65 @@
 <!-- ============= FOOTER ============= -->
 <footer>
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col footer-about">
+    <div class="footer-top">
+      <div class="footer-brand">
         <div class="logo">
           <span class="logo-mark">ILU</span>
           <span>ILU</span>
         </div>
-        <p>Tu negocio te reporta solo. Tu Odoo habla por WhatsApp. Hecho en LATAM, para PyMEs que usan Odoo y quieren dejar de perseguir su información.</p>
+        <p>Tu negocio te reporta solo. Tu Odoo habla por WhatsApp. Hecho en LATAM, para PyMEs que quieren dejar de perseguir su información.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/584245892687?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20ILU" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.214l-.252-.149-2.868.852.852-2.868-.164-.262A8 8 0 1112 20z"/></svg>
+          </a>
+          <a href="https://linkedin.com/company/ilu-agente" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://instagram.com/ilu.agente" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="footer-col">
-        <h5>Producto</h5>
-        <ul>
-          <li><a href="#how">Cómo funciona</a></li>
-          <li><a href="#features">Funciones</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Recursos</h5>
-        <ul>
-          <li><a href="#demo">Ejemplos reales</a></li>
-          <li><a href="#faq">Preguntas frecuentes</a></li>
-          <li><a href="#features">Funciones</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Contacto</h5>
-        <ul>
-          <li><a href="#" data-cal-namespace="demo-ilu" data-cal-link="ivan-asuaje-m0allh" data-cal-config='{"layout":"month_view"}' onclick="event.preventDefault()">Agendar demo</a></li>
-          <li><a href="mailto:contacto@odoowa.com">contacto@odoowa.com</a></li>
-        </ul>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Producto</h5>
+          <ul>
+            <li><a href="#cases">Para quién</a></li>
+            <li><a href="#how">Cómo funciona</a></li>
+            <li><a href="#features">Funciones</a></li>
+            <li><a href="#demo">Ejemplos reales</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Recursos</h5>
+          <ul>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
+            <li><a href="#" class="btn-footer-demo" data-cal-namespace="demo-ilu" data-cal-link="ivan-asuaje-m0allh" data-cal-config='{"layout":"month_view"}' onclick="event.preventDefault()">Agendar demo</a></li>
+            <li><a href="#">Descargar reporte ejemplo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contacto</h5>
+          <ul>
+            <li><a href="mailto:contacto@odoowa.com">contacto@odoowa.com</a></li>
+            <li><a href="https://wa.me/584245892687" target="_blank" rel="noopener">WhatsApp directo</a></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 ILU. No afiliado oficialmente con Odoo S.A. ni con Meta.</span>
-      <span class="mono">hecho en LATAM</span>
+      <div class="footer-bottom-links">
+        <a href="#">Términos</a>
+        <a href="#">Privacidad</a>
+        <span class="mono">hecho en LATAM</span>
+      </div>
     </div>
   </div>
 </footer>
 
 <!-- WhatsApp floating button -->
-<a href="https://wa.me/TUNUMERO?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20ILU%20para%20mi%20Odoo" class="wa-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+<a href="https://wa.me/584245892687?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20ILU%20para%20mi%20Odoo" class="wa-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
   <svg viewBox="0 0 32 32" width="28" height="28"><path fill="#fff" d="M16 3C8.8 3 3 8.6 3 15.5c0 2.5.7 4.8 2 6.8L3 29l7-1.8c1.9 1 4 1.6 6 1.6C23.2 28.8 29 23.2 29 16.3 29 8.6 23.2 3 16 3zm0 23.3c-2 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4c-1.1-1.7-1.7-3.8-1.7-5.8C5.2 9.7 10 5 16 5s10.8 4.7 10.8 10.5c0 5.8-4.8 10.8-10.8 10.8zm5.9-7.9c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2s-.8 1.1-1 1.3-.4.2-.7 0c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.7l.4-.4.3-.4.1-.3c.1-.2 0-.3 0-.5s-.7-1.7-1-2.4c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.3s-1 1-1 2.4 1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/></svg>
 </a>
 
