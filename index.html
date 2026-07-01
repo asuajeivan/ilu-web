@@ -95,26 +95,24 @@
   ]
 }
 </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9H4DQKVB28"></script>
+<!-- Google tag (gtag.js) — deferred to reduce main-thread blocking -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-9H4DQKVB28');
+  window.addEventListener('load', function() {
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-9H4DQKVB28';
+    s.async = true;
+    document.head.appendChild(s);
+  });
 </script>
-<link rel="dns-prefetch" href="https://cdn.prod.website-files.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/nav.css">
-<link rel="stylesheet" href="css/hero.css">
-<link rel="stylesheet" href="css/sections.css">
-<link rel="stylesheet" href="css/faq.css">
-<link rel="stylesheet" href="css/cta.css">
-<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -881,7 +879,7 @@
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h5>Producto</h5>
+          <span class="footer-col-title">Producto</span>
           <ul>
             <li><a href="#cases">Para quién</a></li>
             <li><a href="#how">Cómo funciona</a></li>
@@ -890,7 +888,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h5>Recursos</h5>
+          <span class="footer-col-title">Recursos</span>
           <ul>
             <li><a href="#faq">Preguntas frecuentes</a></li>
             <li><a href="#" class="btn-footer-demo" data-cal-namespace="demo-ilu" data-cal-link="ivan-asuaje-m0allh" data-cal-config='{"layout":"month_view"}' onclick="event.preventDefault()">Agendar demo</a></li>
@@ -898,7 +896,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h5>Contacto</h5>
+          <span class="footer-col-title">Contacto</span>
           <ul>
             <li><a href="mailto:contacto@odoowa.com">contacto@odoowa.com</a></li>
             <li><a href="https://wa.me/584245892687" target="_blank" rel="noopener">WhatsApp directo</a></li>
