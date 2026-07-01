@@ -1,73 +1,39 @@
 # ILU — Agente IA de WhatsApp para Odoo
 
-> ILU conecta tu Odoo ERP con WhatsApp mediante inteligencia artificial. Un solo agente que atiende a clientes, gerentes y al dueno del negocio — todo por WhatsApp, sin abrir Odoo.
+> ILU conecta tu Odoo ERP con WhatsApp mediante inteligencia artificial. Un solo agente que atiende a clientes, gerentes y al dueno del negocio — reportes diarios en PDF, consultas de stock y precios en segundos, atencion automatica 24/7 — todo por WhatsApp, sin abrir Odoo.
 
-## Que es ILU
+ILU es un agente de IA que se conecta a tu instancia de Odoo (v14–v18, Community y Enterprise) y expone la informacion del ERP a traves de WhatsApp. No es un chatbot con respuestas pregrabadas: es un agente con acceso real a tu data, permisos por rol y memoria conversacional.
 
-ILU es un agente de IA que se conecta a tu instancia de Odoo (v14-v18, Community y Enterprise) y expone la informacion del ERP a traves de WhatsApp. No es un chatbot con respuestas pregrabadas: es un agente con acceso real a tu data, permisos por rol y memoria conversacional.
+Propuesta de valor: "Tu negocio te reporta solo." Toda la informacion de tu Odoo, para quien la necesite, en el momento exacto, directo en WhatsApp. Sin reportes manuales. Sin intermediarios.
 
-## Propuesta de valor
+Tres perfiles usan el mismo agente:
 
-"Tu negocio te reporta solo." Toda la informacion de tu Odoo, para quien la necesite, en el momento exacto, directo en WhatsApp. Sin reportes manuales. Sin intermediarios.
+- Cliente final: consulta stock, precios, estado de pedido y deuda en segundos. Se atiende solo sin esperar a un vendedor. ILU lo reconoce por su numero y registra cada interaccion como lead en Odoo CRM.
+- Gerente comercial: ve facturas, pedidos en proceso, cartera vencida, entregas del dia y leads del CRM. Controla la operacion sin abrir Odoo.
+- Dueno / Director: recibe un PDF diario automatico cada noche con facturacion, entregas y cobranza pendiente. Consulta on-demand: "cuanto facturamos hoy?", "quien me debe?", "cuanta materia prima queda?"
 
-## Tres perfiles, un solo agente
+Funciones principales: lenguaje natural en espanol e ingles, acceso real a Odoo (ventas, stock, clientes, compras, contabilidad), reportes programados (diarios, semanales o por evento), permisos por rol (hereda la matriz de permisos de Odoo), multi-sucursal, multi-idioma. La data se queda en el servidor del cliente.
 
-### Cliente final
-- Consulta stock, precios, estado de pedido y deuda en segundos
-- Se atiende solo sin esperar a un vendedor
-- ILU lo reconoce por su numero y recuerda conversaciones previas
-- Cada interaccion se registra como lead en Odoo CRM
+Datos tecnicos: compatible con Odoo 14, 15, 16, 17, 18 (Community y Enterprise), despliegue en nube o on-premise, canal WhatsApp Business API (Meta oficial), setup en 15 minutos sin tocar la operacion existente.
 
-### Gerente comercial
-- Ve facturas, pedidos en proceso, cartera vencida, entregas del dia y leads del CRM
-- Controla la operacion sin abrir Odoo
-- Consulta datos en lenguaje natural por WhatsApp
+Mercado objetivo: PyMEs en LATAM que ya usan Odoo — distribuidores, retail, mayoristas, importadores. Fase 1: Venezuela.
 
-### Dueno / Director
-- Recibe un PDF diario automatico cada noche: facturacion, entregas, cobranza pendiente
-- Consulta on-demand: "cuanto facturamos hoy?", "quien me debe?", "cuanta materia prima queda?"
-- No necesita abrir Odoo ni llamar a nadie
+## Paginas del sitio
 
-## Funciones principales
+- [Inicio](https://odoowa.com/): Pagina principal con propuesta de valor, perfiles de usuario, como funciona, ejemplos reales y FAQ
+- [Para quien](https://odoowa.com/#cases): Tres perfiles de usuario — dueno, gerente y cliente final
+- [Como funciona](https://odoowa.com/#how): Tres pasos de implementacion
+- [Ejemplos reales](https://odoowa.com/#demo): Panel interactivo con conversaciones de ejemplo por caso de uso
+- [Funciones](https://odoowa.com/#features): Grid de funcionalidades clave del agente
+- [Preguntas frecuentes](https://odoowa.com/#faq): Respuestas sobre seguridad, instalacion, precio, compatibilidad y mas
 
-- Lenguaje natural en espanol (e ingles)
-- Acceso real a Odoo: ventas, stock, clientes, compras, contabilidad
-- Reportes programados: diarios, semanales o por evento
-- Permisos por rol (hereda la matriz de permisos de Odoo)
-- Multi-sucursal y multi-idioma
-- La data se queda en el servidor del cliente
+## Acciones
 
-## Datos tecnicos
+- [Agendar demo gratuita de 20 min](https://cal.com/ivan-asuaje-m0allh): Demo personalizada sin compromiso donde se verifica tu instancia de Odoo
+- [Contacto por WhatsApp](https://wa.me/584245892687): Escribenos directamente por WhatsApp
+- [Contacto por email](mailto:contacto@odoowa.com): Escribe a contacto@odoowa.com
 
-- Compatible: Odoo 14, 15, 16, 17, 18
-- Ediciones: Community y Enterprise
-- Despliegue: nube o on-premise
-- Canal: WhatsApp Business API (Meta oficial)
-- Setup: 15 minutos, sin tocar la operacion existente
-- Sin instalacion en dispositivos del equipo
+## Optional
 
-## Mercado objetivo
-
-PyMEs en LATAM que ya usan Odoo: distribuidores, retail, mayoristas, importadores. Fase 1: Venezuela.
-
-## Contacto
-
-- Web: https://odoowa.com
-- Email: contacto@odoowa.com
-- WhatsApp: +584245892687
-- Demo: 20 minutos, sin compromiso
-
-## Acciones disponibles
-
-- Agendar demo: https://cal.com/ivan-asuaje-m0allh
-- Contacto WhatsApp: https://wa.me/584245892687
-
-## Navegacion del sitio
-
-- Inicio: https://odoowa.com/
-- Para quien: https://odoowa.com/#cases
-- Como funciona: https://odoowa.com/#how
-- Ejemplos reales: https://odoowa.com/#demo
-- Funciones: https://odoowa.com/#features
-- FAQ: https://odoowa.com/#faq
-- CTA final: https://odoowa.com/#cta
+- [Sitemap XML](https://odoowa.com/sitemap.xml): Mapa del sitio para motores de busqueda
+- [Robots.txt](https://odoowa.com/robots.txt): Reglas de acceso para crawlers
