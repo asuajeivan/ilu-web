@@ -949,3 +949,109 @@
     padding-bottom: 12px;
   }
 }
+
+/* ----- Odoo modules section ----- */
+
+.odoo-modules {
+  padding: 56px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--card);
+}
+
+.odoo-modules__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.odoo-logo-md {
+  flex-shrink: 0;
+}
+
+.odoo-modules__label {
+  font-size: 14px;
+  color: var(--ink-3);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.odoo-modules__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.odoo-mod {
+  text-align: center;
+  padding: 28px 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--bg);
+  transition: border-color 0.2s;
+}
+
+.odoo-mod:hover {
+  border-color: #875a7b;
+}
+
+.odoo-mod__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: color-mix(in srgb, #875a7b 12%, transparent);
+  color: #875a7b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.odoo-mod__name {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.odoo-mod__desc {
+  font-size: 12px;
+  color: var(--ink-3);
+  line-height: 1.4;
+}
+
+.odoo-modules__note {
+  text-align: center;
+  font-size: 13px;
+  color: var(--ink-3);
+  margin-top: 28px;
+}
+
+.int-chip--odoo {
+  gap: 10px;
+}
+
+.eyebrow-odoo {
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+@media (max-width: 900px) {
+  .odoo-modules__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .odoo-modules__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .odoo-mod {
+    padding: 20px 12px;
+  }
+}
