@@ -75,7 +75,7 @@
 
 .pain-bar__sub {
   font-size: 13px;
-  opacity: 0.55;
+  opacity: 0.7;
 }
 
 /* ----- Audience / 3 profiles ----- */
@@ -1008,6 +1008,13 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 14px;
+}
+
+.odoo-mod__icon--native {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--bg-2);
 }
 
 .odoo-mod__name {
