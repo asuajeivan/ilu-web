@@ -916,23 +916,48 @@
 
 <!-- Cal.com Popup Embed -->
 <script>
+  /* ── Loader del embed de Cal.com (no modificar) ── */
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 
+  /* ── Inicializar namespace "demo-ilu" ── */
   Cal("init", "demo-ilu", { origin: "https://cal.com" });
+
+  /* ── Configuración visual del popup ── */
   Cal.ns["demo-ilu"]("ui", {
     theme: "light",
     styles: { branding: { brandColor: "#D97757" } },
     hideEventTypeDetails: false,
     layout: "month_view"
   });
+
+  /* ── Tracking de conversión al completar reserva ── */
   Cal.ns["demo-ilu"]("on", {
     action: "bookingSuccessful",
-    callback: function () {
+    callback: function (e) {
+      /* 1. Evento principal de conversión: "demo_agendada" */
       if (typeof gtag === "function") {
-        gtag("event", "conversion", {
+        gtag("event", "demo_agendada", {
           event_category: "demo",
-          event_label: "cal_booking_completed"
+          event_label: "cal_booking_completed",
+          value: 50,          /* valor estimado del lead en USD */
+          currency: "USD"
+          /* send_to: "AW-XXXXXXX/YYYYYY" ← insertar ID de conversión de Google Ads cuando esté disponible */
         });
+
+        /* 2. Evento enriquecido con datos de la reserva para reportes avanzados en GA4 */
+        gtag("event", "cal_booking_detail", {
+          event_category: "demo",
+          booking_data: e && e.detail ? JSON.stringify(e.detail) : "no_detail"
+        });
+
+        console.log("[ILU-TRACKING] ✔ Evento 'demo_agendada' enviado a GA4", {
+          value: 50,
+          currency: "USD",
+          booking: e && e.detail ? e.detail : null
+        });
+      } else {
+        /* Fallback: gtag no está definido — log para depuración en producción */
+        console.warn("[ILU-TRACKING] ✘ gtag no está definido. El evento 'demo_agendada' NO se envió. Verifica que GA4 esté cargado.");
       }
     }
   });
